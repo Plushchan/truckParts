@@ -4,6 +4,8 @@ const expressEjsLayouts = require('express-ejs-layouts');
 const path = require('path');
 const mainRouter = require('./routes/mainRouter');
 const con = require('./database/db');
+const filterRouter = require('./routes/filterRouter');
+const Filter = require('./database/models/Filter');
 const app = express();
 
 // Config
@@ -18,10 +20,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Init
 app.use('/', mainRouter);
+app.use('/', filterRouter)
 
 con.authenticate()
     .then(() => {
-        console.log('DB => OKAY');
+        Filter.sync({
+            force: false,
+        });
     })  
     .catch(err => {
         console.error(err);
