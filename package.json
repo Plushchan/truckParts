@@ -1,0 +1,21 @@
+{
+  "name": "truckparts",
+  "version": "1.0.0",
+  "description": "Isso é um projeto feito para meu pai, Leandro Costa Petit. ## Para rodar a aplicação Rode isso: ```zsh docker-compose up --build ```",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "express-ejs-layouts": "^2.5.1",
+    "pg": "^8.16.3",
+    "sequelize": "^6.37.7"
+  }
+}
